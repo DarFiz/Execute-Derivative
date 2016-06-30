@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12.2)
-project(RiemannTensor)
+project(ExecuteDerivative)
 
 # SET( CMAKE_CXX_COMPILER "/usr/bin/g++-5" )
 # SET( CMAKE_CXX_COMPILER "/usr/bin/clang++-3.5" )
