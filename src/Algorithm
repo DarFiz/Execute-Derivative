@@ -1,0 +1,23 @@
+#include <memory>
+
+#include "IFunction.h"
+#include "Function.h"
+#include "Algorithm.h"
+
+namespace alg {
+  
+  void Poch(std::string indeks, ISumaProductFunction & r_egz_suma )
+  {  
+      for(int i = 0; i < r_egz_suma.GetNumberOfElements() ; ++i)
+      {	
+	  IFunctionProduct & r_egz_loc = r_egz_suma.GetNthFunctionProduct(i);
+	  
+	  std::unique_ptr<IFunction> p_egz_fun(new Function);
+	  p_egz_fun->AddName("D");
+	  p_egz_fun->AddIndeks("x1");
+	  
+	  r_egz_loc.FrontMultiplyBy(std::move(p_egz_fun));
+      }
+  }
+  
+}
